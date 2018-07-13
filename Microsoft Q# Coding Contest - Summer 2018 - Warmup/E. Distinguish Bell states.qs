@@ -7,12 +7,10 @@ namespace Solution {
         body
         {
             CNOT(qs[0], qs[1]);
+            let a = M(qs[1]);
             H(qs[0]);
-            let a=0;
-            let b=0;
-            if(M(qs[0]) == One) { a=1; }
-            if(M(qs[1]) == One) { b=1; }
-            return 2*a+b;
+            let b = M(qs[0]);
+            return ResultAsInt([b;a]);
         }
     }
 }
